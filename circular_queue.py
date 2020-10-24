@@ -60,17 +60,11 @@ class MyCircularQueue:
         return False
     
     def incrementTail(self):
-        if self.tail == len(self.queue) - 1:
-            self.tail = 0
-        else:
-            self.tail += 1
+        self.tail = (self.tail + 1) % len(self.queue)
         self.size += 1
             
     def incrementHead(self):
-        if self.head == len(self.queue) - 1:
-            self.head = 0
-        else:
-            self.head += 1
+        self.head = (self.head + 1) % len(self.queue)
         
         self.size -= 1
         
